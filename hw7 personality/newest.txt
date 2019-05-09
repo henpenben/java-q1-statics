@@ -1,0 +1,9 @@
+Betty Boop: [0, 0, 0, 0] = ESTJ
+Snoopy: [0, 0, 0, 0] = ESTJ
+Bugs Bunny: [20, 45, 15, 55] = ESTP
+Daffy Duck: [0, 0, 0, 0] = ESTJ
+The frumious bandersnatch: [50, 0, 33, 100] = XSTP
+Minnie Mouse: [0, 0, 0, 0] = ESTJ
+Luke Skywalker: [100, 100, 0, 50] = INTX
+Han Solo: [50, 50, 50, 38] = XXXJ
+Princess Leia: [0, 0, 0, 0] = ESTJ

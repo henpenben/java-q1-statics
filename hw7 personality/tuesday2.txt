@@ -1,0 +1,9 @@
+Betty Boop: [100, 100, 100, 100] = INFP
+Snoopy: [100, 100, 100, 100] = INFP
+Bugs Bunny: [100, 100, 100, 100] = INFP
+Daffy Duck: [100, 25, 100, 33] = ISFJ
+The frumious bandersnatch: [67, 100, 100, 88] = INFP
+Minnie Mouse: [86, 71, 86, 50] = INFX
+Luke Skywalker: [89, 85, 83, 100] = INFP
+Han Solo: [100, 82, 100, 100] = INFP
+Princess Leia: [100, 100, 82, 100] = INFP

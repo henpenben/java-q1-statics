@@ -1,0 +1,2221 @@
+
+<!-- saved from url=(0070)https://courses.cs.washington.edu/courses/cse142/19wi/handouts/16.html -->
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns="http://www.w3.org/TR/REC-html40"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 15">
+<meta name="Originator" content="Microsoft Word 15">
+<link rel="File-List" href="https://courses.cs.washington.edu/courses/cse142/19wi/handouts/16_files/filelist.xml">
+<link rel="Edit-Time-Data" href="https://courses.cs.washington.edu/courses/cse142/19wi/handouts/16_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>CSE142 handout #16</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Stuart Reges</o:Author>
+  <o:LastAuthor>Stuart Reges</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>2</o:TotalTime>
+  <o:LastPrinted>2019-03-06T17:42:00Z</o:LastPrinted>
+  <o:Created>2019-03-06T17:43:00Z</o:Created>
+  <o:LastSaved>2019-03-06T17:43:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2467</o:Words>
+  <o:Characters>14064</o:Characters>
+  <o:Company>University of Washington</o:Company>
+  <o:Lines>117</o:Lines>
+  <o:Paragraphs>32</o:Paragraphs>
+  <o:CharactersWithSpaces>16499</o:CharactersWithSpaces>
+  <o:Version>15.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:TargetScreenSize>800x600</o:TargetScreenSize>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel="themeData" href="https://courses.cs.washington.edu/courses/cse142/19wi/handouts/16_files/themedata.thmx">
+<link rel="colorSchemeMapping" href="https://courses.cs.washington.edu/courses/cse142/19wi/handouts/16_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:DrawingGridHorizontalSpacing>6 pt</w:DrawingGridHorizontalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:UsePrinterMetrics/>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+   <w:UseWord2010TableStyleRules/>
+   <w:DontUseIndentAsNumberingTabStop/>
+   <w:FELineBreak11/>
+   <w:WW11IndentRules/>
+   <w:DontAutofitConstrainedTables/>
+   <w:AutofitLikeWW11/>
+   <w:HangulWidthLikeWW11/>
+   <w:UseNormalStyleForList/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="371">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="0" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" Priority="0" SemiHidden="true"
+   UnhideWhenUsed="true" Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="59" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1107305727 0 0 415 0;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-469750017 -1073683329 9 0 511 0;}
+@font-face
+	{font-family:Times;
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536858881 -1073711037 9 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times",serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times",serif;
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:0pt;
+	mso-bidi-font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-unhide:no;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times",serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-unhide:no;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times",serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{mso-style-unhide:no;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:112.5pt;
+	margin-bottom:.0001pt;
+	text-indent:-76.5pt;
+	mso-pagination:widow-orphan;
+	tab-stops:112.5pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times",serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2
+	{mso-style-unhide:no;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	tab-stops:112.5pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times",serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{mso-style-unhide:no;
+	mso-style-parent:"";
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-unhide:no;
+	mso-style-parent:"";
+	color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-unhide:no;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:"Segoe UI",sans-serif;
+	mso-fareast-font-family:"Times New Roman";}
+span.grame
+	{mso-style-name:grame;
+	mso-style-unhide:no;}
+span.spelle
+	{mso-style-name:spelle;
+	mso-style-unhide:no;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-parent:"";
+	mso-style-link:"Balloon Text";
+	mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:9.0pt;
+	font-family:"Segoe UI",sans-serif;
+	mso-ascii-font-family:"Segoe UI";
+	mso-hansi-font-family:"Segoe UI";
+	mso-bidi-font-family:"Segoe UI";}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	mso-ascii-font-family:Times;
+	mso-hansi-font-family:Times;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("16_files/header.html") fs;
+	mso-footnote-continuation-separator:url("16_files/header.html") fcs;
+	mso-endnote-separator:url("16_files/header.html") es;
+	mso-endnote-continuation-separator:url("16_files/header.html") ecs;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:.5in .5in .5in .5in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-footer:url("16_files/header.html") f1;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:-227;
+	mso-list-template-ids:616038906;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:"";
+	mso-level-tab-stop:0in;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	margin-left:1.75in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0FA;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	margin-left:2.25in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	margin-left:2.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	margin-left:3.25in;
+	text-indent:-.25in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	margin-left:3.75in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0FA;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	margin-left:4.25in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1
+	{mso-list-id:420881449;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-642328318 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2
+	{mso-list-id:1825512166;
+	mso-list-type:simple;
+	mso-list-template-ids:1208386204;}
+@list l2:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:.25in;
+	mso-level-legacy-space:0in;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l2:level1 lfo2
+	{mso-level-numbering:continue;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:.25in;
+	mso-level-legacy-space:0in;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l2:level1 lfo3
+	{mso-level-numbering:continue;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:.25in;
+	mso-level-legacy-space:0in;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l2:level1 lfo4
+	{mso-level-numbering:continue;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:.25in;
+	mso-level-legacy-space:0in;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times",serif;
+	mso-bidi-font-family:"Times New Roman";}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-unhide:no;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times",serif;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang="EN-US" link="blue" vlink="purple" style="tab-interval:.5in" class="vsc-initialized">
+
+<div class="WordSection1">
+
+<p class="MsoNormal" align="right" style="text-align:right">handout #16</p>
+
+<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:18.0pt">CSE142—Computer Programming I</span></b></p>
+
+<p class="MsoNormal" align="center" style="text-align:center"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:18.0pt;mso-bidi-font-size:10.0pt">Programming
+Assignment #8<o:p></o:p></span></b></p>
+
+<p class="MsoNormal" align="center" style="text-align:center"><span class="grame"><b><span style="font-size:18.0pt">due</span></b></span><b><span style="font-size:18.0pt">:
+Tuesday, 3/12/19, 9 pm</span></b></p>
+
+<p class="MsoNormal" style="margin-top:12.0pt"><b style="mso-bidi-font-weight:
+normal">Please note that solutions to this homework will not be accepted after
+11 pm on Friday, March 15<sup>th</sup>, as described in handout #1.<span style="mso-spacerun:yes">&nbsp; </span></b>This assignment will give you practice
+with defining classes.<span style="mso-spacerun:yes">&nbsp; </span>You are to write
+a set of classes that define the behavior of certain animals.<span style="mso-spacerun:yes">&nbsp; </span>You will be given a program that runs a
+simulation of a world with many animals wandering around in it.<span style="mso-spacerun:yes">&nbsp; </span>Different kinds of animals will behave in
+different ways and you are defining those differences.<span style="mso-spacerun:yes">&nbsp; </span>In this world, animals propagate their
+species by infecting other animals with their DNA, which transforms the other
+animal into the infecting animal’s species.<span style="mso-spacerun:yes">&nbsp;
+</span>This idea of animals transforming into a different species appeared in
+many Star Trek episodes, particularly the Next Generation episode called
+“Identity Crisis.”<b style="mso-bidi-font-weight:normal"><o:p></o:p></b></p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">For this assignment you will be
+given a lot of supporting code that runs the simulation.<span style="mso-spacerun:yes">&nbsp; </span>You are just defining the individual “critters”
+that wander around this world trying to infect each other.<span style="mso-spacerun:yes">&nbsp; </span>While it is running the simulation will look
+something like this:</p>
+
+<p class="MsoNormal" align="center" style="margin-top:12.0pt;text-align:center"><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:540pt;
+ height:360.75pt'>
+ <v:imagedata src="16_files/image001.png" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img width="720" height="481" src="./CSE142 handout #16_files/image002.jpg" v:shapes="_x0000_i1025"><!--[endif]--></p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">Each of your critter classes
+should extend a class known as Critter.<span style="mso-spacerun:yes">&nbsp;
+</span>So each Critter class will look like this:</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">public class
+SomeCritter extends Critter {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>...<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0in;margin-bottom:
+12.0pt;margin-left:0in">The “extends” clause in the header of this class
+establishes an inheritance relationship.<span style="mso-spacerun:yes">&nbsp;
+</span>This is discussed in chapter 9 of the textbook, although you don’t need
+a deep understanding of it for this assignment.<span style="mso-spacerun:yes">&nbsp;
+</span>The main point to understand is that the Critter class has several
+methods and constants defined for you.<span style="mso-spacerun:yes">&nbsp;
+</span>So by saying that you extend the class, you automatically get access to
+these methods and constants.<span style="mso-spacerun:yes">&nbsp; </span>You then
+give new definitions to certain methods to define the behavior of your
+critters.</p>
+
+<p class="MsoNormal" style="margin-bottom:12.0pt">On each round of the
+simulation, each critter is asked what action it wants to perform.<span style="mso-spacerun:yes">&nbsp; </span>There are four possible responses each with a
+constant associated with it.</p>
+
+<div align="center">
+
+<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:191;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
+  <td width="121" valign="top" style="width:90.9pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">Constant</p>
+  </td>
+  <td width="372" valign="top" style="width:279.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">Description</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1">
+  <td width="121" valign="top" style="width:90.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">Action.HOP</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="372" valign="top" style="width:279.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">Move forward one
+  square in its current direction</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2">
+  <td width="121" valign="top" style="width:90.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">Action.LEFT</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="372" valign="top" style="width:279.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">Turn left (rotate 90
+  degrees counter-clockwise)</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3">
+  <td width="121" valign="top" style="width:90.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">Action.RIGHT</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="372" valign="top" style="width:279.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">Turn right (rotate 90
+  degrees clockwise)</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:4;mso-yfti-lastrow:yes">
+  <td width="121" valign="top" style="width:90.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">Action.INFECT</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="372" valign="top" style="width:279.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">Infect the critter in
+  front of you</p>
+  </td>
+ </tr>
+</tbody></table>
+
+</div>
+
+<p class="MsoNormal" style="margin-top:12.0pt">There are three key methods in the
+Critter class that you will redefine in your own classes.<span style="mso-spacerun:yes">&nbsp; </span>When you redefine these methods, you must use
+exactly the same method header as what you see below.<span style="mso-spacerun:yes">&nbsp; </span>The three methods to redefine for each
+Critter class are:</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">public Action
+getMove(CritterInfo info) {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>...<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">public Color
+getColor() {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>...<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">public String
+toString() {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>...<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">For the getMove method you should
+return one of the four Action constants described earlier in the writeup.<span style="mso-spacerun:yes">&nbsp; </span>For the getColor method, you should return
+whatever color you want the simulator to use when drawing your critter.<span style="mso-spacerun:yes">&nbsp; </span>And for the toString method, you should
+return whatever text you want the simulator to use when displaying your critter
+(normally a single character).</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">For example, below is a definition
+for a critter that always infects and that displays itself as a green letter F:</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">import
+java.awt.*;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">public class
+Food extends Critter {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>public Action getMove(CritterInfo info) {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return Action.INFECT;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>public Color getColor() {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return Color.GREEN;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><span style="mso-spacerun:yes">&nbsp;</span><span style="mso-spacerun:yes">&nbsp;&nbsp;
+</span>public String toString() {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return "F";<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">Notice that it begins with an
+import declaration to be able to access the Color class.<span style="mso-spacerun:yes">&nbsp; </span>All of your Critter classes will have the
+basic form shown above.</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in">The getMove method is passed an object of type
+CritterInfo.<span style="mso-spacerun:yes">&nbsp; </span>This is an object that
+provides you information about the current status of the critter.<span style="mso-spacerun:yes">&nbsp; </span>It includes eight methods for asking about
+surrounding neighbors plus a method to find out the current direction the
+critter is facing.<span style="mso-spacerun:yes">&nbsp; </span>Below are the methods
+of the CritterInfo class:</p>
+
+<div align="center">
+
+<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:191;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
+  <td width="306" valign="top" style="width:229.7pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">CritterInfo Method</p>
+  </td>
+  <td width="384" valign="top" style="width:4.0in;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">Description</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1">
+  <td width="306" valign="top" style="width:229.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">public
+  Neighbor getFront()</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="384" valign="top" style="width:4.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">returns neighbor in
+  front of you</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2">
+  <td width="306" valign="top" style="width:229.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">public
+  Neighbor getBack()</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="384" valign="top" style="width:4.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">returns neighbor in
+  back of you</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3">
+  <td width="306" valign="top" style="width:229.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">public
+  Neighbor getLeft()</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="384" valign="top" style="width:4.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">returns neighbor to
+  your left</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:4">
+  <td width="306" valign="top" style="width:229.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">public
+  Neighbor getRight()</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="384" valign="top" style="width:4.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">returns neighbor to
+  your right</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:5">
+  <td width="306" valign="top" style="width:229.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">public
+  Direction getDirection()</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="384" valign="top" style="width:4.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">returns direction you
+  are facing</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:6">
+  <td width="306" valign="top" style="width:229.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">public
+  boolean frontThreat()</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="384" valign="top" style="width:4.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">whether there is an
+  enemy facing you in front of you</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:7">
+  <td width="306" valign="top" style="width:229.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">public
+  boolean backThreat()</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="384" valign="top" style="width:4.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">whether there is an
+  enemy facing you in back of you</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:8">
+  <td width="306" valign="top" style="width:229.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">public
+  boolean leftThreat()</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="384" valign="top" style="width:4.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">whether there is an
+  enemy facing you to your left</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:9;mso-yfti-lastrow:yes">
+  <td width="306" valign="top" style="width:229.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">public
+  boolean rightThreat()</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="384" valign="top" style="width:4.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">whether there is an
+  enemy facing you to your right</p>
+  </td>
+ </tr>
+</tbody></table>
+
+</div>
+
+<p class="MsoNormal" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in">The getDirection method tells you what direction you are
+facing (one of four direction constants):</p>
+
+<div align="center">
+
+<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:191;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
+  <td width="154" valign="top" style="width:115.6pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">Constant</p>
+  </td>
+  <td width="132" valign="top" style="width:99.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">Description</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1">
+  <td width="154" valign="top" style="width:115.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">Direction.NORTH</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="132" valign="top" style="width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">facing north</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2">
+  <td width="154" valign="top" style="width:115.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">Direction.SOUTH</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="132" valign="top" style="width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">facing south</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3">
+  <td width="154" valign="top" style="width:115.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">Direction.EAST</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="132" valign="top" style="width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">facing east</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:4;mso-yfti-lastrow:yes">
+  <td width="154" valign="top" style="width:115.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">Direction.WEST</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="132" valign="top" style="width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">facing west</p>
+  </td>
+ </tr>
+</tbody></table>
+
+</div>
+
+<p class="MsoNormal" style="margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in">The return type for the first group of four CritterInfo methods
+is Neighbor.<span style="mso-spacerun:yes">&nbsp; </span>There are four different
+constants for the different kind of neighbors you might encounter:</p>
+
+<div align="center">
+
+<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:191;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
+  <td width="142" valign="top" style="width:106.7pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">Constant</p>
+  </td>
+  <td width="404" valign="top" style="width:302.65pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">Description</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1">
+  <td width="142" valign="top" style="width:106.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">Neighbor.WALL</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="404" valign="top" style="width:302.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">The neighbor in that
+  direction is a wall</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2">
+  <td width="142" valign="top" style="width:106.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">Neighbor.EMPTY</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="404" valign="top" style="width:302.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">The neighbor in that
+  direction an empty square</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3">
+  <td width="142" valign="top" style="width:106.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">Neighbor.SAME</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="404" valign="top" style="width:302.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">The neighbor in that
+  direction is a critter of your species</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:4;mso-yfti-lastrow:yes">
+  <td width="142" valign="top" style="width:106.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">Neighbor.OTHER</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="404" valign="top" style="width:302.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:2.0pt;margin-right:0in;
+  margin-bottom:2.0pt;margin-left:0in;text-align:center">The neighbor in that
+  direction is a critter of another species</p>
+  </td>
+ </tr>
+</tbody></table>
+
+</div>
+
+<p class="MsoNormal" style="margin-top:12.0pt">Notice that you are only told
+whether critters are of your species or some other species.<span style="mso-spacerun:yes">&nbsp; </span>You can’t find out exactly what species they
+are.<span style="mso-spacerun:yes">&nbsp; </span>The second group of four methods
+tells you whether there are enemies in each direction who are facing you, which
+means they could potentially infect you.</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">This program will probably be
+confusing at first because this is the first time where you are not writing the
+main method.<span style="mso-spacerun:yes">&nbsp; </span>Your code will not be in
+control.<span style="mso-spacerun:yes">&nbsp; </span>Instead, you are defining a
+series of objects that become part of a larger system.<span style="mso-spacerun:yes">&nbsp; </span>For example, you might find that you want to
+have one of your critters make several moves all at once.<span style="mso-spacerun:yes">&nbsp; </span>You won’t be able to do that.<span style="mso-spacerun:yes">&nbsp; </span>The only way a critter can move is to wait
+for the simulator to ask it for a move.<span style="mso-spacerun:yes">&nbsp;
+</span>The simulator is in control, not your critters.<span style="mso-spacerun:yes">&nbsp; </span>Although this experience can be frustrating,
+it is a good introduction to the kind of programming we do with objects.<span style="mso-spacerun:yes">&nbsp; </span>A typical Java program involves many
+different interacting objects that are each a small part of a much larger
+system.</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">Critters move around in a world of
+finite size that is enclosed on all four sides by walls.<span style="mso-spacerun:yes">&nbsp; </span>You can include a constructor for your
+classes if you want, although it should generally be a zero-argument
+constructor (one that takes no arguments).<span style="mso-spacerun:yes">&nbsp;
+</span>The one exception is that you are to define a class called Bear that
+takes a boolean parameter specifying whether it is a black bear or a polar
+bear, which will change how its color is displayed.<span style="mso-spacerun:yes">&nbsp; </span>The simulator treats bears in a special way,
+basically flipping a coin each time it constructs one to decide whether or not
+to create a white bear or black bear.<span style="mso-spacerun:yes">&nbsp;
+</span>Your Bear class does not have to figure this out.<span style="mso-spacerun:yes">&nbsp; </span>You just have to make sure that each bear
+pays attention to the boolean value passed to the constructor by the simulator.</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">You are to implement four
+classes.<span style="mso-spacerun:yes">&nbsp; </span></p>
+
+<p class="MsoNormal" style="margin-bottom:6.0pt"><b style="mso-bidi-font-weight:
+normal">Bear<o:p></o:p></b></p>
+
+<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:191;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
+  <td width="97" valign="top" style="width:72.9pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">Constructor</p>
+  </td>
+  <td width="493" valign="top" style="width:369.9pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+  mso-bidi-font-family:&quot;Times New Roman&quot;">public Bear(boolean polar)</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1">
+  <td width="97" valign="top" style="width:72.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">getColor</p>
+  </td>
+  <td width="493" valign="top" style="width:369.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+  mso-bidi-font-family:&quot;Times New Roman&quot;">Color.WHITE</span> for a polar bear
+  (when polar is true), <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+  mso-bidi-font-family:&quot;Times New Roman&quot;">Color.BLACK</span> otherwise (when
+  polar is false)</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2">
+  <td width="97" valign="top" style="width:72.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">toString</p>
+  </td>
+  <td width="493" valign="top" style="width:369.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in"><span style="mso-bidi-font-size:12.0pt;font-family:
+  &quot;Times New Roman&quot;,serif">Should alternate on each different move between a
+  slash character (/) and a backslash character (\) starting with a slash.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3;mso-yfti-lastrow:yes">
+  <td width="97" valign="top" style="width:72.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">getMove</p>
+  </td>
+  <td width="493" valign="top" style="width:369.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">always infect if an enemy is in front<br>
+  otherwise hop if possible<br>
+  otherwise turn left.</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="margin-top:6.0pt"><b style="mso-bidi-font-weight:
+normal">Lion<o:p></o:p></b></p>
+
+<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:191;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
+  <td width="97" valign="top" style="width:72.9pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">Constructor</p>
+  </td>
+  <td width="493" valign="top" style="width:369.9pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+  mso-bidi-font-family:&quot;Times New Roman&quot;">public Lion()</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1">
+  <td width="97" valign="top" style="width:72.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">getColor</p>
+  </td>
+  <td width="493" valign="top" style="width:369.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in"><span style="mso-bidi-font-size:12.0pt;font-family:
+  &quot;Times New Roman&quot;,serif">Randomly picks one of three colors (</span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">Color.RED</span><span style="mso-bidi-font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">, </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">Color.GREEN</span><span style="mso-bidi-font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">, </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">Color.BLUE</span><span style="mso-bidi-font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">) and
+  uses that color for three moves, then randomly picks one of those colors
+  again for the next three moves, then randomly picks another one of those
+  colors for the next three moves, and so on.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2">
+  <td width="97" valign="top" style="width:72.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">toString</p>
+  </td>
+  <td width="493" valign="top" style="width:369.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+  mso-bidi-font-family:&quot;Times New Roman&quot;">"L"</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3;mso-yfti-lastrow:yes">
+  <td width="97" valign="top" style="width:72.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">getMove</p>
+  </td>
+  <td width="493" valign="top" style="width:369.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">always infect if an enemy is in front<br>
+  otherwise if a wall is in front or to the right, then turn left<br>
+  otherwise if a fellow Lion is in front, then turn right<br>
+  otherwise hop.</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="margin-top:6.0pt"><b style="mso-bidi-font-weight:
+normal">Giant<o:p></o:p></b></p>
+
+<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:191;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
+  <td width="97" valign="top" style="width:72.9pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">Constructor</p>
+  </td>
+  <td width="493" valign="top" style="width:369.9pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+  mso-bidi-font-family:&quot;Times New Roman&quot;">public Giant()</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1">
+  <td width="97" valign="top" style="width:72.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">getColor</p>
+  </td>
+  <td width="493" valign="top" style="width:369.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+  mso-bidi-font-family:&quot;Times New Roman&quot;">Color.GRAY</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2">
+  <td width="97" valign="top" style="width:72.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">toString</p>
+  </td>
+  <td width="493" valign="top" style="width:369.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+  mso-bidi-font-family:&quot;Times New Roman&quot;">"fee"</span><span style="mso-bidi-font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif"> for 6
+  moves, then </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+  mso-bidi-font-family:&quot;Times New Roman&quot;">"fie"</span><span style="mso-bidi-font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif"> for 6
+  moves, then </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+  mso-bidi-font-family:&quot;Times New Roman&quot;">"foe"</span><span style="mso-bidi-font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif"> for 6
+  moves, then </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+  mso-bidi-font-family:&quot;Times New Roman&quot;">"fum"</span><span style="mso-bidi-font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif"> for 6
+  moves, then repeat.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3;mso-yfti-lastrow:yes">
+  <td width="97" valign="top" style="width:72.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">getMove</p>
+  </td>
+  <td width="493" valign="top" style="width:369.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">always infect if an enemy is in front<br>
+  otherwise hop if possible<br>
+  otherwise turn right.</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="margin-top:6.0pt"><b style="mso-bidi-font-weight:
+normal">Husky<o:p></o:p></b></p>
+
+<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:191;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
+  <td width="97" valign="top" style="width:72.9pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">Constructor</p>
+  </td>
+  <td width="493" valign="top" style="width:369.9pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+  mso-bidi-font-family:&quot;Times New Roman&quot;">public Husky()</span><span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1">
+  <td width="97" valign="top" style="width:72.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">getColor</p>
+  </td>
+  <td width="493" valign="top" style="width:369.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">You decide</p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2">
+  <td width="97" valign="top" style="width:72.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">toString</p>
+  </td>
+  <td width="493" valign="top" style="width:369.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">You decide<span style="font-size:10.0pt"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3;mso-yfti-lastrow:yes">
+  <td width="97" valign="top" style="width:72.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">getMove</p>
+  </td>
+  <td width="493" valign="top" style="width:369.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-top:2.0pt;margin-right:0in;margin-bottom:
+  2.0pt;margin-left:0in">You decide</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="margin-top:12.0pt">As noted above, you will determine
+the behavior of your Husky class.<span style="mso-spacerun:yes">&nbsp; </span>On the
+last day of class, we will host a contest where students will be allowed to
+compete to see which has the best survival rate.</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">Some of the style points for this
+assignment will be awarded on the basis of how much energy and creativity you
+put into defining an interesting Husky class.<span style="mso-spacerun:yes">&nbsp;
+</span>These points allow us to reward the students who spend time writing an
+interesting critter definition.<span style="mso-spacerun:yes">&nbsp; </span>Your
+Husky's behavior should not be trivial or closely match that of an existing
+animal shown in class. <span style="mso-spacerun:yes">&nbsp;</span>You can also get
+credit for providing a careful description of the experiments you have
+performed or the thought process you have used to arrive at your Husky
+strategy.<b style="mso-bidi-font-weight:normal"><o:p></o:p></b></p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">Style points will also be awarded
+for expressing each critter's behavior elegantly.<span style="mso-spacerun:yes">&nbsp; </span>Encapsulate the data inside your
+objects.<span style="mso-spacerun:yes">&nbsp; </span>Follow past style guidelines
+about indentation, spacing, identifiers, and localizing variables.<span style="mso-spacerun:yes">&nbsp; </span>Place comments at the beginning of each class
+documenting that critter's behavior, and on any complex code.<span style="mso-spacerun:yes">&nbsp; </span>One of the style points will be awarded based
+on whether you make each field of each class private and whether you initialize
+all fields in constructors (you only need to include a constructor if you are
+setting fields to values other than the default zero-equivalent values for each
+type).</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">For the random moves, each possible
+choice must be equally likely.<span style="mso-spacerun:yes">&nbsp; </span>You may
+use either a Random object or the Math.random() method to obtain pseudorandom
+values, although if you use a Random object, you are required to make it a
+field of your object so that you don’t have to construct a new one every time
+you use it.</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">Be sure that your code is tied to
+actual moves made by a critter (i.e., that changes to state occur in the
+getMove method).<span style="mso-spacerun:yes">&nbsp; </span>For example, the bear
+is supposed to be displayed alternately as a slash or backslash.<span style="mso-spacerun:yes">&nbsp; </span>This should happen as the getMove method is
+called.<span style="mso-spacerun:yes">&nbsp; </span>The simulator alternates between
+calling toString and getMove, but your code shouldn’t depend on that.<span style="mso-spacerun:yes">&nbsp; </span>Your code should work properly even if
+toString is called twice and then getMove is called.<span style="mso-spacerun:yes">&nbsp; </span>The alternation should happen for each move,
+not for each call on toString.<span style="mso-spacerun:yes">&nbsp; </span>This
+applies also to the behavior of giants and lions because they are defined in
+terms of changes happening after a given number of moves.</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">Each of your critter classes has a
+pattern to it and at first all of your critters will be in synch with each
+other.<span style="mso-spacerun:yes">&nbsp; </span>For example, all of the bears
+will be displayed as slashes and all of the giants will be displayed as
+“fee.”<span style="mso-spacerun:yes">&nbsp; </span>But as critters become infected,
+they will get out of synch.<span style="mso-spacerun:yes">&nbsp; </span>A newly
+constructed giant will display itself as “fee” for its first six moves, so it
+won’t necessarily match the other giants if they are somewhere in the middle of
+their pattern.<span style="mso-spacerun:yes">&nbsp; </span>Doesn’t worry about the
+fact that your critters end up getting out of synch in this way.</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">Your classes should be stored in
+files called Bear.java, Lion.java, Giant.java, and Husky.java.<span style="mso-spacerun:yes">&nbsp; </span>The files that you need for this assignment
+will be included in a zip file called ass9.zip available from the class web
+page.<span style="mso-spacerun:yes">&nbsp; </span>All of these files must be
+included in the same folder as your Critter files.<span style="mso-spacerun:yes">&nbsp; </span>You should download and unzip ass9.zip, then
+add your four classes to the folder, compile CritterMain and run CritterMain.</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">The simulator has several
+supporting classes that are included in ass8.zip (CritterModel, CritterFrame,
+etc).<span style="mso-spacerun:yes">&nbsp; </span>You can in general ignore these
+classes.<span style="mso-spacerun:yes">&nbsp; </span>When you compile CritterMain,
+these other classes will be compiled.<span style="mso-spacerun:yes">&nbsp;
+</span>The only classes you will have to modify and recompile are CritterMain
+(if you change what critters to include in the simulation) and your own
+individual Critter classes.</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">You will be given two sample
+critter classes.<span style="mso-spacerun:yes">&nbsp; </span>The first is the Food
+class that appears earlier in the writeup.<span style="mso-spacerun:yes">&nbsp;
+</span>The second is a particularly powerful strategy called FlyTrap that was
+discussed in lecture.<span style="mso-spacerun:yes">&nbsp; </span>Both of these
+class definitions appear in ass9.zip and should serve as examples of how to
+write your own critter classes.</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">You will notice that CritterMain
+has lines of code like the following:</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:40.5pt;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;">//
+frame.add(30, Lion.class);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">You should uncomment these lines of
+code as you complete the various classes you have been asked to write.<span style="mso-spacerun:yes">&nbsp; </span>Then critters of that type will be included
+in the simulation.</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">For those who want to produce
+critters that “win” in the sense of taking over the world, you will want to
+understand some subtleties about the simulation.<span style="mso-spacerun:yes">&nbsp; </span>In general, the simulator allows each critter
+to make a move and it scrambles the order in which it does that.<span style="mso-spacerun:yes">&nbsp; </span>This becomes important, for example, when two
+critters are facing each other and each wants to infect the other.<span style="mso-spacerun:yes">&nbsp; </span>The simulator will randomly decide which
+critter goes first and the one that goes first wins.<span style="mso-spacerun:yes">&nbsp; </span>If a critter successfully hops during its
+turn, it cannot be infected for the rest of the round.<span style="mso-spacerun:yes">&nbsp; </span>Once a critter has been infected, it cannot
+be infected again by a different critter during the same round, and if the
+infected critter hadn’t already completed its move, it won’t get a turn.<span style="mso-spacerun:yes">&nbsp; </span>Finally, critters that infect after a hop are
+slightly favored in that around 20% of the time an infect action will fail if
+the critter did not hop on its previous move.</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">When a critter is infected, it is
+replaced by a brand new critter of the other species, but that new critter
+retains the properties of the old critter.<span style="mso-spacerun:yes">&nbsp;
+</span>So it will be at the same location and facing in the same direction.</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">The simulator provides great
+visual feedback about where critters are, so you can watch them move around the
+world.<span style="mso-spacerun:yes">&nbsp; </span>But it doesn’t give great
+feedback about what direction critters are facing.<span style="mso-spacerun:yes">&nbsp; </span>The simulator has a “debug” button that makes
+this easier to see.<span style="mso-spacerun:yes">&nbsp; </span>When you request
+debug mode, your critters will be displayed as arrow characters that indicate
+the direction they are facing.</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">The simulator also indicates the
+“step” number as the simulation proceeds (initially displaying a 0).<span style="mso-spacerun:yes">&nbsp; </span>Below are some suggestions for how you can
+test your critters:</p>
+
+<ul style="margin-top:0in" type="disc">
+ <li class="MsoNormal" style="margin-top:12.0pt;mso-list:l1 level1 lfo5"><b style="mso-bidi-font-weight:normal">Bear</b>: Try running the simulator
+     with just 30 bears in the world.<span style="mso-spacerun:yes">&nbsp;
+     </span>You should see about half of them being white and about half being
+     black.<span style="mso-spacerun:yes">&nbsp; </span>Initially they should all be
+     displayed with slash characters.<span style="mso-spacerun:yes">&nbsp;
+     </span>When you click “step,” they should all switch to backslash
+     characters.<span style="mso-spacerun:yes">&nbsp; </span>When you click “step”
+     again they should go back to slash characters.<span style="mso-spacerun:yes">&nbsp; </span>And so on.<span style="mso-spacerun:yes">&nbsp; </span>When you click “start,” you should
+     observe the bears heading towards walls and then hugging the walls in a
+     counterclockwise direction.<span style="mso-spacerun:yes">&nbsp; </span>They
+     will sometimes bump into each other and go off in other directions, but
+     their tendency should be to follow along the walls.</li>
+ <li class="MsoNormal" style="margin-top:12.0pt;mso-list:l1 level1 lfo5"><b style="mso-bidi-font-weight:normal">Lion</b>: Try running the simulator
+     with just 30 lions in the world.<span style="mso-spacerun:yes">&nbsp;
+     </span>You should see about one third of them being red and one third
+     being green and one third being blue.<span style="mso-spacerun:yes">&nbsp;
+     </span>Use the “step” button to make sure that the colors alternate
+     properly.<span style="mso-spacerun:yes">&nbsp; </span>They should keep these
+     initial colors for three moves.<span style="mso-spacerun:yes">&nbsp;
+     </span>That means that they should stay this color while the simulator is
+     indicating that it is step 0, step 1, and step 2.<span style="mso-spacerun:yes">&nbsp; </span>They should switch colors when the
+     simulator indicates that you are up to step 3 and should stay with these
+     new colors for steps 4 and 5.<span style="mso-spacerun:yes">&nbsp; </span>Then
+     you should see a new color scheme for steps 6, 7, and 8.<span style="mso-spacerun:yes">&nbsp; </span>And so on.<span style="mso-spacerun:yes">&nbsp; </span>When you click “start” you should see
+     them bouncing off of walls.<span style="mso-spacerun:yes">&nbsp; </span>When
+     they bump into a wall, they should turn around and head back in the
+     direction they came.<span style="mso-spacerun:yes">&nbsp; </span>They will
+     sometimes bump into each other as well.<span style="mso-spacerun:yes">&nbsp;
+     </span>They shouldn’t end up clustering together anywhere.</li>
+ <li class="MsoNormal" style="margin-top:12.0pt;mso-list:l1 level1 lfo5"><b style="mso-bidi-font-weight:normal">Giant</b>: Try running the simulator
+     with just 30 giants in the world.<span style="mso-spacerun:yes">&nbsp;
+     </span>They should all be displayed as “fee.”<span style="mso-spacerun:yes">&nbsp; </span>This should be true for steps 0, 1, 2,
+     3, 4, and 5.<span style="mso-spacerun:yes">&nbsp; </span>When you get to step
+     6, they should all switch to displaying “fie” and should stay that way for
+     steps 6, 7, 8, 9, 10, and 11.<span style="mso-spacerun:yes">&nbsp; </span>Then
+     they should be “foe” for steps 12, 13, 14, 15, 16, and 17.<span style="mso-spacerun:yes">&nbsp; </span>And they should be “fum” for steps 18,
+     19, 20, 21, 22, and 23.<span style="mso-spacerun:yes">&nbsp; </span>Then they
+     should go back to “fee” for 6 more steps, and so on.<span style="mso-spacerun:yes">&nbsp; </span>When you click “start,” you should
+     observe the same kind of wall-hugging behavior that bears have, but this
+     time in a clockwise direction.</li>
+</ul>
+
+</div>
+
+
+
+
+</body></html>

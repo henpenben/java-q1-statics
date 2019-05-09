@@ -1,0 +1,1399 @@
+
+<!-- saved from url=(0070)https://courses.cs.washington.edu/courses/cse142/19wi/handouts/15.html -->
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns="http://www.w3.org/TR/REC-html40"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 15">
+<meta name="Originator" content="Microsoft Word 15">
+<link rel="File-List" href="https://courses.cs.washington.edu/courses/cse142/19wi/handouts/15_files/filelist.xml">
+<title>CSE142 handout #15</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>reges</o:Author>
+  <o:LastAuthor>Stuart Reges</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:LastPrinted>2019-02-27T17:59:00Z</o:LastPrinted>
+  <o:Created>2019-02-27T18:00:00Z</o:Created>
+  <o:LastSaved>2019-02-27T18:00:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1938</o:Words>
+  <o:Characters>9743</o:Characters>
+  <o:Company>CSE</o:Company>
+  <o:Lines>81</o:Lines>
+  <o:Paragraphs>23</o:Paragraphs>
+  <o:CharactersWithSpaces>11658</o:CharactersWithSpaces>
+  <o:Version>15.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:TargetScreenSize>800x600</o:TargetScreenSize>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel="themeData" href="https://courses.cs.washington.edu/courses/cse142/19wi/handouts/15_files/themedata.thmx">
+<link rel="colorSchemeMapping" href="https://courses.cs.washington.edu/courses/cse142/19wi/handouts/15_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:UseWord2002TableStyleRules/>
+   <w:UseWord2010TableStyleRules/>
+   <w:DontUseIndentAsNumberingTabStop/>
+   <w:FELineBreak11/>
+   <w:WW11IndentRules/>
+   <w:DontAutofitConstrainedTables/>
+   <w:AutofitLikeWW11/>
+   <w:HangulWidthLikeWW11/>
+   <w:UseNormalStyleForList/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="371">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="0" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" Priority="0" SemiHidden="true"
+   UnhideWhenUsed="true" Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="59" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1107305727 0 0 415 0;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-469750017 -1073683329 9 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-unhide:no;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-unhide:no;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{mso-style-unhide:no;
+	mso-style-parent:"";
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-unhide:no;
+	mso-style-parent:"";
+	color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-unhide:no;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:"Segoe UI",sans-serif;
+	mso-fareast-font-family:"Times New Roman";}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Balloon Text";
+	mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:9.0pt;
+	font-family:"Segoe UI",sans-serif;
+	mso-ascii-font-family:"Segoe UI";
+	mso-hansi-font-family:"Segoe UI";
+	mso-bidi-font-family:"Segoe UI";}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("15_files/header.html") fs;
+	mso-footnote-continuation-separator:url("15_files/header.html") fcs;
+	mso-endnote-separator:url("15_files/header.html") es;
+	mso-endnote-continuation-separator:url("15_files/header.html") ecs;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:.5in 66.25pt .5in 66.25pt;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-footer:url("15_files/header.html") f1;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:-227;
+	mso-list-template-ids:-776310590;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:"";
+	mso-level-tab-stop:0in;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	margin-left:1.75in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0FA;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	margin-left:2.25in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	margin-left:2.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	margin-left:3.25in;
+	text-indent:-.25in;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	margin-left:3.75in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0FA;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	margin-left:4.25in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-unhide:no;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang="EN-US" link="blue" vlink="purple" style="tab-interval:.5in" class="vsc-initialized">
+
+<div class="WordSection1">
+
+<p class="MsoNormal" align="right" style="text-align:right">handout #15</p>
+
+<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:18.0pt">CSE142—Computer Programming I<o:p></o:p></span></b></p>
+
+<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:18.0pt">Programming Assignment #7<o:p></o:p></span></b></p>
+
+<p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:14.0pt">due: Tuesday, 3/5/19, 9 pm<o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">This assignment will give you
+practice with arrays and producing an external output file.<span style="mso-spacerun:yes">&nbsp; </span>You are going to write a program that
+processes an input file of data for a personality test known as the Keirsey
+Temperament Sorter.<span style="mso-spacerun:yes">&nbsp; </span>The Keirsey
+personality test involves answering 70 questions each of which have two
+answers.<span style="mso-spacerun:yes">&nbsp; </span>We will refer to them as the
+“A” answer and the “B” answer.<span style="mso-spacerun:yes">&nbsp; </span>People
+taking the test are allowed to leave a question blank, in which case their
+answer will be recorded with a dash (“-”).</p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">The input file will contain a
+series of line pairs, one per person.<span style="mso-spacerun:yes">&nbsp; </span>The
+first line will have the person’s name (possibly including spaces) and the
+second line will have a series of 70 letters all in a row (all either “A”, “B”
+or “-”).<span style="mso-spacerun:yes">&nbsp; </span>Your job is to compute the
+scores and overall result for each person and to report this information to an
+output file.</p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif">The Keirsey test measures four independent
+dimensions of personality:<o:p></o:p></span></p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">Extrovert versus
+Introvert (E vs I): what energizes you<o:p></o:p></span></p>
+
+<p class="MsoPlainText" style="margin-left:1.0in;text-indent:-.25in"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">Sensation versus
+iNtuition (S vs N): what you focus on<o:p></o:p></span></p>
+
+<p class="MsoPlainText" style="margin-left:1.0in;text-indent:-.25in"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">Thinking versus
+Feeling (T vs F): how you interpret what you focus on<o:p></o:p></span></p>
+
+<p class="MsoPlainText" style="margin-left:1.0in;text-indent:-.25in"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">Judging versus
+Perceiving (J vs P): how you approach life<o:p></o:p></span></p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif">Individuals are categorized as being on
+one side or the other of each of these dimensions.<span style="mso-spacerun:yes">&nbsp; </span>The corresponding letters are put together to
+form a personality type.<span style="mso-spacerun:yes">&nbsp; </span>For example, if
+you are an extravert, intuitive, thinking, perceiving person then you are
+referred to as an ENTP.<span style="mso-spacerun:yes">&nbsp; </span>Usually the
+letter used is the first letter of the corresponding word, but notice that
+because the letter “I” is used for “Introvert”, the letter “N” is used for
+“iNtuition.”<o:p></o:p></span></p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif">Remember that the Keirsey test involves 70
+questions answered either A or B.<span style="mso-spacerun:yes">&nbsp; </span>The A
+answers correspond to extravert, sensation, thinking and judging (the left-hand
+answers in the list above).<span style="mso-spacerun:yes">&nbsp; </span>The B
+answers correspond to introvert, intuition, feeling and perceiving (the
+right-hand answers in the list above).<span style="mso-spacerun:yes">&nbsp; </span>For
+each of these dimensions, we determine a number between 0 and 100 and indicate
+whether they were closer to the A side or the B side.<span style="mso-spacerun:yes">&nbsp; </span>The number is computed by figuring out what
+percentage of B answers the user gave for that dimension (rounded to the
+nearest integer).<o:p></o:p></span></p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt;margin-right:0in;margin-bottom:
+12.0pt;margin-left:0in;page-break-after:avoid"><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif">Let’s look at a specific example.<span style="mso-spacerun:yes">&nbsp; </span>Suppose that someone’s answers divide up as
+follows:<o:p></o:p></span></p>
+
+<div align="center">
+
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt;
+ mso-border-insideh:.5pt solid windowtext;mso-border-insidev:.5pt solid windowtext">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
+  <td width="138" valign="top" style="width:103.5pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">Dimension<o:p></o:p></span></p>
+  </td>
+  <td width="129" valign="top" style="width:96.8pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif"># of A answers<o:p></o:p></span></p>
+  </td>
+  <td width="129" valign="top" style="width:96.85pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif"># of B answers<o:p></o:p></span></p>
+  </td>
+  <td width="91" valign="top" style="width:68.25pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">% B<o:p></o:p></span></p>
+  </td>
+  <td width="96" valign="top" style="width:1.0in;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">Result<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1">
+  <td width="138" valign="top" style="width:103.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">Extrovert/Introvert<o:p></o:p></span></p>
+  </td>
+  <td width="129" valign="top" style="width:96.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">1<o:p></o:p></span></p>
+  </td>
+  <td width="129" valign="top" style="width:96.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">9<o:p></o:p></span></p>
+  </td>
+  <td width="91" valign="top" style="width:68.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">90%<o:p></o:p></span></p>
+  </td>
+  <td width="96" valign="top" style="width:1.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">I<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2">
+  <td width="138" valign="top" style="width:103.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">Sensing/iNtuition<o:p></o:p></span></p>
+  </td>
+  <td width="129" valign="top" style="width:96.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">17<o:p></o:p></span></p>
+  </td>
+  <td width="129" valign="top" style="width:96.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">3<o:p></o:p></span></p>
+  </td>
+  <td width="91" valign="top" style="width:68.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">15%<o:p></o:p></span></p>
+  </td>
+  <td width="96" valign="top" style="width:1.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">S<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3">
+  <td width="138" valign="top" style="width:103.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">Thinking/Feeling<o:p></o:p></span></p>
+  </td>
+  <td width="129" valign="top" style="width:96.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">18<o:p></o:p></span></p>
+  </td>
+  <td width="129" valign="top" style="width:96.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">2<o:p></o:p></span></p>
+  </td>
+  <td width="91" valign="top" style="width:68.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">10%<o:p></o:p></span></p>
+  </td>
+  <td width="96" valign="top" style="width:1.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">T<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:4;mso-yfti-lastrow:yes">
+  <td width="138" valign="top" style="width:103.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">Judging/Perceiving<o:p></o:p></span></p>
+  </td>
+  <td width="129" valign="top" style="width:96.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">18<o:p></o:p></span></p>
+  </td>
+  <td width="129" valign="top" style="width:96.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">2<o:p></o:p></span></p>
+  </td>
+  <td width="91" valign="top" style="width:68.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">10%<o:p></o:p></span></p>
+  </td>
+  <td width="96" valign="top" style="width:1.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoPlainText" align="center" style="margin-top:3.0pt;text-align:center"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">J<o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+</div>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif">These numbers correspond to the answers
+given by the first person in the sample input file (“Betty Boop”).<span style="mso-spacerun:yes">&nbsp; </span>We add up how many of each type of answer we
+got for each of the four dimensions.<span style="mso-spacerun:yes">&nbsp; </span>Then
+we compute the percentage of B answers for each dimension.<span style="mso-spacerun:yes">&nbsp; </span>Then we assign letters based on which side
+the person ends up on for each dimension.<span style="mso-spacerun:yes">&nbsp;
+</span>In the Extrovert/Introvert dimension, for example, the person gave 9 “B”
+answers out of 10 total, which is 90%, which means they end up on the B side
+which is “Introvert” or I.<span style="mso-spacerun:yes">&nbsp; </span>In the
+Sensing/iNtuition dimension the person gave 3 “B” answers out of 20 total,
+which is 15%, which means they end up on the A side with is “Sensing” or S.<span style="mso-spacerun:yes">&nbsp; </span>The overall scores for this person are the
+percentages (90, 15, 10, 10) which works out to a personality type of ISTJ.<o:p></o:p></span></p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif">Some people will end up with a percentage
+of 50 in one or more dimensions.<span style="mso-spacerun:yes">&nbsp; </span>This
+represents a tie, where the person doesn’t clearly fall on either side.<span style="mso-spacerun:yes">&nbsp; </span>In this case we use the letter “X” to
+indicate that the person is in the middle for this particular dimension.<span style="mso-spacerun:yes">&nbsp; </span>The last two entries in the sample input file
+end up with X’s in their personality type.<o:p></o:p></span></p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif">Take a moment to compare the sample input
+file and the sample output file and you will see that each pair of lines in the
+input file is turned into a single line of output in the output file that
+reports the person’s name, the list of percentages and the personality type.<span style="mso-spacerun:yes">&nbsp; </span>You are required to exactly reproduce the
+format of this output file.<span style="mso-spacerun:yes">&nbsp; </span>You are also
+required to reproduce the sample log of execution.<span style="mso-spacerun:yes">&nbsp; </span>You will provide a short introduction and
+then ask the user for the names of the input file and output file.<o:p></o:p></span></p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif">If you are interested in taking the
+personality test yourself, you will find a link from the class webpage to an online
+form with the 70 questions.<span style="mso-spacerun:yes">&nbsp; </span>We will be
+making a special data file called bigdata.txt that includes data from students
+in the class.<o:p></o:p></span></p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif">To count the number of A and B answers for
+each dimension, you need to know something about the structure of the test.<span style="mso-spacerun:yes">&nbsp; </span>You will get the best results if you take the
+test without knowing about the structure, so you might want to take the test
+first before you read what follows.<span style="mso-spacerun:yes">&nbsp; </span>The
+test has 10 groups of 7 questions with a repeating pattern in each group of 7
+questions.<span style="mso-spacerun:yes">&nbsp; </span>The first question in each
+group is an Extrovert/Introvert question (questions 1, 8, 15, 22, etc).<span style="mso-spacerun:yes">&nbsp; </span>The next two questions are for
+Sensing/iNtuition (questions 2, 3, 9, 10, 16, 17, 23, 24, etc).<span style="mso-spacerun:yes">&nbsp; </span>The next two questions are for
+Thinking/Feeling (questions 4, 5, 11, 12, 18, 19, 25, 26, etc).<span style="mso-spacerun:yes">&nbsp; </span>And the final two questions in each group are
+for Judging/Perceiving (questions 6, 7, 13, 14, 20, 21, 27, 28, etc).<span style="mso-spacerun:yes">&nbsp; </span>Notice that there are half as many Extrovert/Introvert
+questions as there are for the other three dimensions.<span style="mso-spacerun:yes">&nbsp; </span>The seventy letters in the input file appear
+in question order (first letter for question 1, second letter for question 2,
+third letter for question 3, etc).<o:p></o:p></span></p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif">Remember that the user might leave a
+question blank, in which case you will find a dash in the input file for that
+question.<span style="mso-spacerun:yes">&nbsp; </span>Dash answers are not included
+in computing the percentages.<span style="mso-spacerun:yes">&nbsp; </span>For
+example, if for one of the dimensions you have 6 A answers, 9 B answers and 5
+dashes, you would compute the percentage of B answers as 9 of 15, or 60%.<o:p></o:p></span></p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif">You should round percentages to the
+nearest integer.<span style="mso-spacerun:yes">&nbsp; </span>You can use the
+Math.round method to do so, but you will have to cast the result to an int, as
+in:<o:p></o:p></span></p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt">int percent = (int)
+Math.round(percentage);</p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif">This is the first time you will generate
+an output file.<span style="mso-spacerun:yes">&nbsp; </span>You do so by
+constructing an object of type PrintStream and writing to it in the same way
+you write to System.out (with print and println statements).<span style="mso-spacerun:yes">&nbsp; </span>See section 6.4 of the book for examples.<span style="mso-spacerun:yes">&nbsp; </span>It is a good idea to send your output to
+System.out while you are developing your program and send it to the output file
+only after you have thoroughly tested your program.<o:p></o:p></span></p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif">You should read the user’s answers from
+the console using a call on nextLine().<span style="mso-spacerun:yes">&nbsp; </span>This
+will read an entire line of input and return it as a String.</span></p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">One of the things to keep in mind
+for this program is that you are transforming data from one form to another.<span style="mso-spacerun:yes">&nbsp; </span>You start with a String that has 70
+characters in it.<span style="mso-spacerun:yes">&nbsp; </span>You convert that into
+two sets of counters (how many A answers for each dimension, how many B answers
+for each dimension).<span style="mso-spacerun:yes">&nbsp; </span>You convert that
+into a set of percentages.<span style="mso-spacerun:yes">&nbsp; </span>And you
+finally convert that into a String that represents the personality type.<span style="mso-spacerun:yes">&nbsp; </span>If you work through this step by step, the
+problem will be easier to solve.<span style="mso-spacerun:yes">&nbsp; </span>The
+following diagram summarizes the different transformations:</p>
+
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="margin-left:5.4pt;border-collapse:collapse;mso-yfti-tbllook:1184;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
+  <td width="138" valign="top" style="width:103.5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:12.0pt;margin-right:0in;
+  margin-bottom:6.0pt;margin-left:0in;text-align:center"><b style="mso-bidi-font-weight:
+  normal"><u>Data<o:p></o:p></u></b></p>
+  </td>
+  <td width="518" valign="top" style="width:381.4pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-top:12.0pt;margin-right:-2.0pt;
+  margin-bottom:6.0pt;margin-left:0in;text-align:center"><b style="mso-bidi-font-weight:
+  normal"><u>Example<o:p></o:p></u></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1">
+  <td width="138" valign="top" style="width:103.5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center">String (70 chars)</p>
+  </td>
+  <td width="518" valign="top" style="width:381.4pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-right:-2.0pt;text-align:center"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">"BABAAAABAAAAAAABAAAABBAAAAAABAAAABABAABAAABABABAABAAAAAABAAAAAABAAAAAA"<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2">
+  <td width="138" valign="top" style="width:103.5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><b style="mso-bidi-font-weight:normal">&#8595;<o:p></o:p></b></p>
+  </td>
+  <td width="518" valign="top" style="width:381.4pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-right:-2.0pt;text-align:center"><b style="mso-bidi-font-weight:normal">&#8595;<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3">
+  <td width="138" valign="top" style="width:103.5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center">counts of A/B</p>
+  </td>
+  <td width="518" valign="top" style="width:381.4pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-right:-2.0pt;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;">{1, 17, 18, 18}, {9, 3, 2,
+  2}<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:4">
+  <td width="138" valign="top" style="width:103.5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><b style="mso-bidi-font-weight:normal">&#8595;<o:p></o:p></b></p>
+  </td>
+  <td width="518" valign="top" style="width:381.4pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-right:-2.0pt;text-align:center"><b style="mso-bidi-font-weight:normal">&#8595;<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:5">
+  <td width="138" valign="top" style="width:103.5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center">B percentages</p>
+  </td>
+  <td width="518" valign="top" style="width:381.4pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-right:-2.0pt;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;">{90, 15, 10, 10}<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:6">
+  <td width="138" valign="top" style="width:103.5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><b style="mso-bidi-font-weight:normal">&#8595;<o:p></o:p></b></p>
+  </td>
+  <td width="518" valign="top" style="width:381.4pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-right:-2.0pt;text-align:center"><b style="mso-bidi-font-weight:normal">&#8595;<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:7;mso-yfti-lastrow:yes">
+  <td width="138" valign="top" style="width:103.5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center">Personality type</p>
+  </td>
+  <td width="518" valign="top" style="width:381.4pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-right:-2.0pt;text-align:center"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;">"ISTJ"<o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif">Notice that the letters “A” and “B” in the
+sample input file sometimes appear as uppercase letters and sometimes appear as
+lowercase letters.<span style="mso-spacerun:yes">&nbsp; </span>Your program must
+recognize them in either case.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">You may assume that the input file
+has no errors.<span style="mso-spacerun:yes">&nbsp; </span>In particular, you may
+assume that the file exists, that it is composed of pairs of lines, and that
+the second line in each pair will have exactly 70 characters that are either A,
+B or dash (although the A’s and B’s might be in either uppercase form or lowercase
+form or a combination).<span style="mso-spacerun:yes">&nbsp; </span>You may also
+assume that nobody has zero answers for a given dimension (it would be
+impossible to determine a percentage in that case).</p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif">The sample input and output files provide
+just a few simple examples of how this program works.<span style="mso-spacerun:yes">&nbsp; </span>We will be using a much more extensive file
+for testing your program.<span style="mso-spacerun:yes">&nbsp; </span>As mentioned
+earlier, we will include data from people in the class to make this file.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:12.0pt">Your program is likely to have the
+number “4” in several places because of the four dimensions of this test.<span style="mso-spacerun:yes">&nbsp; </span>You should introduce a class constant to make
+this more readable instead of using 4 itself.<span style="mso-spacerun:yes">&nbsp;
+</span>It won’t be possible, however, to change this constant to some other
+number and have the program function properly.<span style="mso-spacerun:yes">&nbsp;
+</span>The constant is helpful for documentation purposes, but it won’t make
+the program particularly flexible.</p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif">We will once again be expecting you to use
+good programming style and to include useful comments throughout your program.<span style="mso-spacerun:yes">&nbsp; </span>We are not specifying how to decompose this
+problem into methods, but we will be grading on the quality of your
+decomposition.<span style="mso-spacerun:yes">&nbsp; </span>That means you will have
+to decide how to decompose the program into methods.<span style="mso-spacerun:yes">&nbsp; </span>You should keep in mind the ideas we have
+been stressing all quarter.<span style="mso-spacerun:yes">&nbsp; </span>You don’t
+want to have redundant code.<span style="mso-spacerun:yes">&nbsp; </span>You don’t
+want to have any one method be overly long.<span style="mso-spacerun:yes">&nbsp;
+</span>You want to break the problem down into logical subproblems so that
+someone reading your code can see the sequence of steps it is performing.<span style="mso-spacerun:yes">&nbsp; </span>You want main to be a concise summary of the
+program.<span style="mso-spacerun:yes">&nbsp; </span>You want to avoid method
+chaining by using parameters and return values.<span style="mso-spacerun:yes">&nbsp;
+</span>You should restrict yourself to the programming constructs included in
+chapters 1 through 7 of the textbook in solving this problem.<span style="mso-spacerun:yes">&nbsp; </span>You are restricted to one-dimensional arrays
+for this assignment (no 2-dimensional arrays, 3-dimensional arrays, etc).<span style="mso-spacerun:yes">&nbsp; </span>You are allowed to use Arrays.toString, but
+you should not use any other methods from the Arrays class for this assignment.<o:p></o:p></span></p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif">Your program should be stored in a file
+called Personality.java.<span style="mso-spacerun:yes">&nbsp; </span>You will need
+to include the file personality.txt in the same folder as your program.<o:p></o:p></span></p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif">You can find out more about the Keirsey
+Temperament Sorter at </span><a href="http://www.keirsey.com/">http://www.keirsey.com</a><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">.<o:p></o:p></span></p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><b><u><span style="font-size:
+14.0pt;font-family:&quot;Times New Roman&quot;,serif">Input file personality.txt<o:p></o:p></span></u></b></p>
+
+<p class="MsoPlainText">Betty Boop</p>
+
+<p class="MsoPlainText">BABAAAABAAAAAAABAAAABBAAAAAABAAAABABAABAAABABABAABAAAAAABAAAAAABAAAAAA</p>
+
+<p class="MsoPlainText">Snoopy</p>
+
+<p class="MsoPlainText">AABBAABBBBBABABAAAAABABBAABBAAAABBBAAABAABAABABAAAABAABBBBAAABBAABABBB</p>
+
+<p class="MsoPlainText">Bugs Bunny</p>
+
+<p class="MsoPlainText">aabaabbabbbaaaabaaaabaaaaababbbaabaaaabaabbbbabaaaabaabaaaaaabbaaaaabb</p>
+
+<p class="MsoPlainText">Daffy Duck</p>
+
+<p class="MsoPlainText">BAAAAA-BAAAABABAAAAAABA-AAAABABAAAABAABAA-BAAABAABAAAAAABA-BAAABA-BAAA</p>
+
+<p class="MsoPlainText">The frumious bandersnatch</p>
+
+<p class="MsoPlainText">-BBaBAA-BBbBBABBBBA-BaBBBBBbbBBABBBBBBABB-BBBaBBABBBBBBB-BABBBBBBBBBBB</p>
+
+<p class="MsoPlainText">Minnie Mouse</p>
+
+<p class="MsoPlainText">BABA-AABABBBAABAABA-ABABAAAB-ABAAAAAA-AAAABAAABAAABAAAAAB-ABBAAAAAAAAA</p>
+
+<p class="MsoPlainText">Luke Skywalker</p>
+
+<p class="MsoPlainText">bbbaaabbbbaaba-BAAAABBABBAAABBAABAAB-AAAAABBBABAABABA-ABBBABBABAA-AAAA</p>
+
+<p class="MsoPlainText">Han Solo</p>
+
+<p class="MsoPlainText">BA-ABABBB-bbbaababaaaabbaaabbaaabbabABBAAABABBAAABABAAAABBABAAABBABAAB</p>
+
+<p class="MsoPlainText">Princess Leia</p>
+
+<p class="MsoPlainText">BABBAAABBBBAAABBA-AAAABABBABBABBAAABAABAAABBBA-AABAABAAAABAAAAABABBBAA</p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><b><u><span style="font-size:
+14.0pt;font-family:&quot;Times New Roman&quot;,serif">Output file for personality.txt<o:p></o:p></span></u></b></p>
+
+<p class="MsoPlainText">Betty Boop: [90, 15, 10, 10] = ISTJ</p>
+
+<p class="MsoPlainText">Snoopy: [30, 45, 30, 70] = ESTP</p>
+
+<p class="MsoPlainText">Bugs Bunny: [20, 45, 15, 55] = ESTP</p>
+
+<p class="MsoPlainText">Daffy Duck: [100, 6, 20, 6] = ISTJ</p>
+
+<p class="MsoPlainText">The frumious bandersnatch: [86, 95, 75, 78] = INFP</p>
+
+<p class="MsoPlainText">Minnie Mouse: [67, 28, 32, 5] = ISTJ</p>
+
+<p class="MsoPlainText">Luke Skywalker: [89, 61, 26, 25] = INTJ</p>
+
+<p class="MsoPlainText">Han Solo: [80, 50, 45, 25] = IXTJ</p>
+
+<p class="MsoPlainText">Princess Leia: [80, 50, 50, 5] = IXXJ</p>
+
+<p class="MsoPlainText" style="margin-top:12.0pt"><b><u><span style="font-size:
+14.0pt;font-family:&quot;Times New Roman&quot;,serif">Sample log (user input bold and
+underlined)<o:p></o:p></span></u></b></p>
+
+<p class="MsoPlainText">This program processes a file of answers to the</p>
+
+<p class="MsoPlainText">Keirsey Temperament Sorter.<span style="mso-spacerun:yes">&nbsp; </span>It converts the</p>
+
+<p class="MsoPlainText">various A and B answers for each person into</p>
+
+<p class="MsoPlainText">a sequence of B-percentages and then into a</p>
+
+<p class="MsoPlainText">four-letter personality type.</p>
+
+<p class="MsoPlainText"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoPlainText">input file name? <b style="mso-bidi-font-weight:normal"><u>personality.txt</u></b></p>
+
+<p class="MsoPlainText">output file name? <b style="mso-bidi-font-weight:normal"><u>output.txt</u></b></p>
+
+</div>
+
+
+
+
+</body></html>
